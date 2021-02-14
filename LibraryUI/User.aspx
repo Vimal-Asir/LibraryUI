@@ -11,9 +11,14 @@
             width: 30% !important;
         }
 
+        #Back{
+            position: absolute;
+            left: 100px;
+        }
         .custom-form {
-            margin-top: 10% !important;
-            margin-left: 34% !important;
+            margin-top: 0% !important;
+            margin-left: 35% !important;
+             margin-right: 5% !important;
         }
 
         #hidden_id {
@@ -25,11 +30,56 @@
             font-size: 12px;
             padding-left: 19px;
         }
+
+        body {
+            background: #262626;
+            color: #fff
+        }
+
+        .edit {
+            color: #262626;
+        }
+
+        .delete {
+            color: #262626;
+        }
+
+        .user-btn-align {
+            display: flex !important;
+            justify-content: space-between !important;
+        }
+
+        .logout-button {
+            position: absolute;
+            /* left: 105px; */
+            right: 6px;
+            top: 5px;
+        }
+
+        .static-header {
+            text-align: left;
+            font-family: cursive;
+            color: #03e9f4;
+            padding-left: 50px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Button ID="Button5" runat="server" Text="Logout" OnClick="Button5_Click" class="btn btn-danger logout-button" />
         <div class="custom-form">
+             <h3 class="static-header">Manage User</h3>
+          <br />
+            <div class="user-btn-align">
+                <div style="margin-top: 10px;">
+                    <asp:Button ID="Back" runat="server" OnClick="Back_Click" Text="Back" class="btn btn-success" />
+                </div>
+
+                <div style="margin-top: 10px;">
+                </div>
+            </div>
+             <br /><br />
+           
             <div>
                 <asp:TextBox ID="hidden_id" runat="server" class="form-control"></asp:TextBox>
                 <label>Name</label><br />
@@ -55,6 +105,7 @@
                 </asp:DropDownList>
                 <asp:Label ID="err_role" runat="server" Class="error-message" Text=""></asp:Label>
             </div>
+             <br /><br />
             <div style="margin-top: 10px;">
                 <asp:Button ID="add" OnClick="btn_save_Click" runat="server" Style="width: 30% !important" value="Save" class="btn btn-success" Text="Save" />
                 <%--<asp:Button ID="update" OnClick="btn_Update_Click" runat="server" Text="Update" class="btn btn-success" CausesValidation="False" Style="width: 30% !important" />--%>

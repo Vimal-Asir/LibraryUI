@@ -84,5 +84,15 @@ namespace LibraryUI
                 }
             }
         }
+
+        protected void Back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UserSummary.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
     }
 }

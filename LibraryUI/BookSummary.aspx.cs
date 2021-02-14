@@ -30,7 +30,7 @@ namespace LibraryUI
                         if (Convert.ToInt32(Session["RoleID"].ToString()) != 1)
                         {
                             Add_new.Visible = false;
-                            Button3.Visible = false;
+                            //Button3.Visible = false;
                             GridView1.Columns[0].Visible = false;
                         }
                     }
@@ -71,6 +71,11 @@ namespace LibraryUI
         public void btnUser_Click(object sender, EventArgs e)
         {
             Response.Redirect("UserSummary.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }
